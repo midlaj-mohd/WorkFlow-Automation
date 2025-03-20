@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <img src="logo.png" alt="Logo" class="logo-img">
+        <h1 class="logo">We Help Solutions</h1>
+
+        <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Enter Employee Name">
+        <button id="searchButton">Search</button>
+        </div>
+        
+        <nav class="nav">
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2>Work Data of <span id="employee-name"></span></h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Job Location</th>
+            <th>Salary (₹)</th>
+        </tr>
+    </thead>
+    <tbody id="job-history-body">
+        <!-- Data will be added dynamically -->
+    </tbody>
+</table>
+
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

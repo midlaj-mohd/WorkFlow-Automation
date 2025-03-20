@@ -1,0 +1,1307 @@
+/* Apply basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ensure body takes full height of the viewport */
+html, body {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* General Reset */
+body {
+    display: flex;
+    flex-direction: column; /* Make the body a flex container */
+    height: 100%; /* Ensure the body takes full height */
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Login Page  */
+.login-page {
+    font-family: 'Arial', sans-serif;
+    background-color: #0e4da4;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(loginbg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0);
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.login-container h1 {
+    font-size: 24px;
+    color: #ffffff;
+    padding-bottom: 0%;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.login-container p {
+    font-size: 14px;
+    color: #767676;
+    padding: 10px;
+    text-align: center;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #fffafa;
+    font-size: small;
+}
+
+input[type="password"] {
+    padding-right: 30px; /* Ensure there's space for the eye icon */
+}
+
+.input-group {
+    margin-bottom: 10px;
+    position: relative;
+    width: 100%;
+}
+
+.input-group label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    background-color: transparent;
+    outline: none;
+    transition: border-color 0.3s ease;
+    color: #ffffff;
+}
+
+button.login-btn {
+    width: 100%;
+    max-width: 320px;
+    background-color: #006aff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+button.login-btn:hover {
+    background-color: #0f7544;
+}
+
+/* Header Styles */
+.header {
+    background: #0056b3;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    justify-content: flex-start;
+}
+
+.logo-img {
+    max-width: 75px;
+    height: auto;
+}
+
+.header .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.header .nav {
+    margin-left: auto; /* Push navigation to the right */
+}
+
+.header .nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.header .nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+
+/* Search Bar */
+/* Search bar container */
+#search-container, .search-container, #total-pending-expense {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px auto;
+    max-width: 500px;
+}
+
+/* Input field */
+#search-input, #searchInput {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#search-input:focus, #searchInput:focus {
+    border-color: #007bff;
+}
+
+/* Search button */
+#search-btn, #searchButton {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#search-btn:hover, #searchButton:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+/* Dashboard Layout */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1; /* This will make the dashboard section take the available space */
+}
+
+/* Card Styles */
+.card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    text-align: center; /* Centers text inside the card */
+    flex-direction: column; /* Allow multiple lines (wrap content vertically) */
+    word-wrap: break-word; /* Allows wrapping of text */
+    word-break: break-word; /* Ensures that long words break */
+    max-width: 100%; /* Prevent overflow */
+    width: 100%; /* Ensure it takes the full width of its container */
+    box-sizing: border-box; /* Ensure padding does not affect width */
+}
+
+/* Heading styles inside the card */
+.card h2 {
+    margin-top: 0;
+    font-size: 1.25rem;
+    color: #0056b3;
+    word-wrap: break-word; /* Allows wrapping of heading text */
+    word-break: break-word; /* Break long words if necessary */
+    margin-bottom: 1rem; /* Add space between heading and content */
+}
+
+/* Styles for the Add Day button (Just the Plus Icon) */
+.add-day {
+    background: #f0f0f0; /* Light gray background for the button */
+    border-radius: 50%; /* Make it a circle */
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Centers the content vertically */
+    height: 100px; /* Set a fixed height */
+    width: 100px; /* Set a fixed width */
+    cursor: pointer; /* Makes it clickable */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for hover effect */
+}
+
+/* Large plus icon style */
+.add-day-icon {
+    font-size: 6rem; /* Very large plus sign */
+    color: #0057b3a9; /* Grey color */
+    font-weight: bold;
+}
+
+/* Hover effect to make it interactive */
+.add-day:hover {
+    transform: scale(1.1); /* Slightly increase the size when hovered */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhance the shadow */
+}
+
+/* Click effect to make it "clickable" */
+.add-day:active {
+    transform: scale(0.95); /* Slight shrink when clicked */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reduced shadow on click */
+}
+
+
+
+
+
+
+/* Jobs Section */
+#jobs {
+    padding: 2rem;
+    background: #f9fafb;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#jobs h2 {
+    font-size: 1.5rem;
+    color: #2d3748;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.jobs-inner {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.job-card {
+    flex: 1 1 calc(50% - 1.5rem); /* Two cards per row with gap */
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border-color: #cbd5e0;
+    text-decoration: none;
+}
+
+.job-card h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #2d3748;
+    font-weight: 600;
+}
+
+/* Specific Card Styles */
+.job-card.completed {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05));
+    border-color: rgba(16, 185, 129, 0.2);
+}
+
+.job-card.completed:hover {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.1));
+}
+
+.job-card.pending {
+    background: linear-gradient(135deg, rgba(245, 101, 101, 0.1), rgba(245, 101, 101, 0.05));
+    border-color: rgba(245, 101, 101, 0.2);
+}
+
+.job-card.pending:hover {
+    background: linear-gradient(135deg, rgba(245, 101, 101, 0.15), rgba(245, 101, 101, 0.1));
+}
+
+.job-card.add-work {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(99, 102, 241, 0.05));
+    border-color: rgba(99, 102, 241, 0.2);
+    cursor: pointer;
+}
+
+.job-card.add-work:hover {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(99, 102, 241, 0.1));
+}
+
+.job-card.salary {
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(251, 191, 36, 0.05));
+    border-color: rgba(251, 191, 36, 0.2);
+}
+
+.job-card.salary:hover {
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.15), rgba(251, 191, 36, 0.1));
+}
+
+
+
+
+
+
+
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    padding: 0px; /* Adjust padding as needed */
+    font-size: x-small;
+    background: #0056b3;
+    color: #fff;
+    margin-top: auto; /* This ensures the footer stays at the bottom */
+}
+
+/* Responsive Design */
+
+/* For mobile screens (smaller than 768px) */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header .nav ul {
+        flex-direction: column;
+    }
+
+    .job-card {
+        flex: 1 1 100%;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr; /* Stacks cards vertically on small screens */
+    }
+
+    .login-container {
+        padding: 20px; /* Reduced padding for smaller screen */
+        width: 100%; /* Ensure container fits on smaller screens */
+    }
+
+    .add-day {
+        width: 80px; /* Slightly reduce the size */
+        height: 80px; /* Slightly reduce the size */
+    }
+
+    .add-day-icon {
+        font-size: 4rem; /* Smaller plus sign on mobile */
+    }
+}
+
+/* For larger screens (laptops and desktops) */
+@media (min-width: 769px) {
+    .dashboard {
+        grid-template-columns: repeat(3, 1fr); /* Adjust for larger screens */
+    }
+
+    .login-container {
+        padding: 40px; /* Keep larger padding on bigger screens */
+    }
+
+    .add-day {
+        width: 100px; /* Regular size for larger screens */
+        height: 100px;
+    }
+
+    .add-day-icon {
+        font-size: 6rem; /* Regular plus icon size for large screens */
+    }
+}
+
+
+
+
+/* Popup Styles */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5); /* Add semi-transparent background */
+}
+
+/* Popup content container */
+.popup-content {
+    background: #a8a7a7;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%; /* Width adjusts with screen size */
+    max-width: 600px; /* Set a max-width to prevent overflow on very large screens */
+    min-width: 300px; /* Ensure it doesn’t get too small */
+    text-align: center;
+    position: relative;
+    overflow-y: auto; /* Allow vertical scrolling if content is large */
+    max-height: 80vh; /* Set a maximum height for the popup content */
+}
+
+/* Header inside the popup */
+.popup-content h2 {
+    margin-top: 0;
+    color: #0056b3;
+}
+
+/* Label inside the popup */
+.popup-content label {
+    display: block;
+    font-weight: 500;
+}
+
+/* Input fields, textareas, and buttons inside the popup */
+.popup-content input,
+.popup-content textarea,
+.popup-content button {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Button inside the popup */
+.popup-content button {
+    background: #0056b3;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+/* Hover effect for the button */
+.popup-content button:hover {
+    background: #0045a1;
+}
+
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+}
+
+
+/* Dialogue Box  */
+
+.confirmation-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.dialog-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+
+.dialog-buttons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dialog-yes, .dialog-no {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dialog-yes:hover {
+    background: #0056b3;
+}
+
+.dialog-no {
+    background: #6c757d;
+}
+
+.dialog-no:hover {
+    background: #5a6268;
+}
+
+/* Style for the floating tick button */
+.floating-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.floating-btn:hover {
+    background-color: #45a049;
+}
+
+/* tools */
+
+.tool-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.tool-nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.tool-dashboard {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.tool-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tool-add-card form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.tool-add-card form input,
+.tool-add-card form select,
+.tool-add-card form textarea,
+.tool-add-card form button {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.tool-add-card form button {
+    background-color: #004c99;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.tool-add-card form button:hover {
+    background-color: #003366;
+}
+
+.tool-list-card {
+    overflow-y: auto;
+    max-height: 600px;
+}
+
+.tool-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tool-item h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.tool-item button {
+    padding: 0.5rem 1rem;
+    background-color: #e63946;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tool-item button:hover {
+    background-color: #b71c1c;
+}
+
+#expenses ,
+#other-expenses {
+    cursor: pointer; /* Show pointer cursor */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#expenses:hover ,
+#other-expenses:hover {
+    transform: scale(1.02); /* Slightly enlarge the card on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+}
+
+
+/* General Container */
+.expenses-container {
+    max-width: 750px;
+    margin: auto;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+.expenses-title {
+    text-align: center;
+    color: #0056b3;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.expenses-form-title,
+.expenses-list-title {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+/* Form Styling */
+.expenses-form-section {
+    background: #f9f9f9;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.expense-input {
+    width: 100%;
+    padding: 6px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.expense-submit-btn {
+    margin-top: 10px;
+    width: 100%;
+    padding: 8px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.expense-submit-btn:hover {
+    background-color: #003d80;
+}
+
+/* Table Styling */
+.expenses-list-section {
+    margin-top: 15px;
+}
+
+/* Make Table Compact */
+.expenses-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 14px; /* Smaller text for compact look */
+}
+
+/* Table Head & Body Styling */
+.expenses-table th, 
+.expenses-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal; /* Prevents overflow */
+    line-height: 1.2; /* Reduce row height */
+}
+
+/* Reduce Header Size */
+.expenses-table th {
+    background-color: #0056b3;
+    color: white;
+    font-size: 13px;
+    padding: 6px;
+}
+
+/* Alternate row color */
+.expenses-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* 🔹 Responsive Design for Mobile */
+@media screen and (max-width: 768px) {
+    .expenses-container {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .expenses-table {
+        font-size: 12px; /* Reduce font size */
+    }
+
+    .expenses-table th, 
+    .expenses-table td {
+        padding: 5px; /* Reduce padding */
+    }
+
+    /* ✅ Keep Headers but Reduce Font Size */
+    .expenses-table th {
+        font-size: 11px;
+        padding: 5px;
+    }
+
+    /* ✅ Ensure Content Fits in 3 Lines */
+    .expenses-table td {
+        font-size: 12px;
+        text-align: left;
+        padding: 4px;
+        line-height: 1.1; /* Reduce line height for compact look */
+    }
+
+    /* ✅ Ensure No Horizontal Scroll */
+    .expenses-table {
+        table-layout: auto; /* Let table adjust naturally */
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+
+/* Add New Expense Button */
+.expense-toggle-btn {
+    width: 100%;
+    max-width: 200px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: #0056b3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    display: block;
+    margin: 10px auto; /* Center align */
+}
+
+/* Hover Effect */
+.expense-toggle-btn:hover {
+    background-color: #003d80;
+    transform: scale(1.05);
+}
+
+/* Active/Clicked Effect */
+.expense-toggle-btn:active {
+    background-color: #002b5e;
+    transform: scale(0.98);
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    .expense-toggle-btn {
+        width: 90%; /* Full width on small screens */
+        max-width: 100%;
+        font-size: 13px;
+        padding: 8px;
+    }
+}
+
+
+
+
+
+/* Delete Button */
+.expense-delete-btn {
+    padding: 5px 10px;
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.expense-delete-btn:hover {
+    background-color: #a62828;
+}
+
+
+
+/* Salary */
+
+/* Employee Salary Management Specific Styles */
+.employee-salary-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.employee-salary-title {
+    text-align: center;
+    color: #333;
+}
+
+.employee-salary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.employee-salary-table th,
+.employee-salary-table td {
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.employee-salary-table th {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+.employee-salary-table td {
+    background-color: #f9f9f9;
+}
+
+
+/* Edit Popup  */
+
+#editpopup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; /* Adjust for responsiveness */
+    max-width: 500px; /* Maximum size for larger screens */
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+#editpopup h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #333;
+}
+
+#editpopup form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#editpopup form .form-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#editpopup form .form-group label {
+    flex: 1; /* Take up equal space for alignment */
+    font-weight: bold;
+    color: #555;
+    text-align: right; /* Align labels to the right */
+}
+
+#editpopup form .form-group input,
+#editpopup form .form-group textarea {
+    flex: 2; /* Wider input fields */
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+#editpopup form .form-group input:focus,
+#editpopup form .form-group textarea:focus {
+    outline: none;
+    border-color: #007bff; /* Blue outline for focus */
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+#editpopup form textarea {
+    resize: none;
+    min-height: 80px;
+}
+
+#editpopup form button {
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    background: #007bff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background 0.3s;
+}
+
+#editpopup form button:hover {
+    background: #0056b3;
+}
+
+#editpopup form button[type="button"] {
+    background: #6c757d;
+}
+
+#editpopup form button[type="button"]:hover {
+    background: #5a6268;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    #editpopup {
+        width: 95%;
+        padding: 15px;
+    }
+
+    #editpopup h2 {
+        font-size: 1.2rem;
+    }
+
+    #editpopup form .form-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #editpopup form .form-group label {
+        text-align: left;
+        margin-bottom: 5px;
+    }
+
+    .tool-dashboard {
+        padding: 1rem;
+        grid-template-columns: 1fr; /* Stack items vertically for smaller screens */
+    }
+
+    .tool-card {
+        padding: 1rem;
+    }
+
+    .floating-btn {
+        bottom: 15px;
+        right: 15px;
+        font-size: 20px;
+        padding: 12px;
+    }
+}
+
+
+
+
+/* General popup container */
+#editpopupdaily {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    width: 90%; /* Responsive width */
+    max-width: 600px; /* Max width for larger screens */
+    max-height: 90vh; /* Prevent overflow on smaller screens */
+    overflow-y: auto;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+/* Form layout */
+#editpopupdaily form {
+    display: flex;
+    flex-wrap: wrap; /* Allow fields to wrap to next line */
+    gap: 15px; /* Space between fields */
+    justify-content: space-between; /* Evenly space fields */
+}
+
+/* Label and input on the same line */
+#editpopupdaily form label,
+#editpopupdaily form input[type="text"] {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* Label styling */
+#editpopupdaily form label {
+    font-size: 14px;
+    font-weight: bold;
+    width: 48%; /* Ensure label and input fit in one line */
+    box-sizing: border-box;
+}
+
+/* Input field styling */
+#editpopupdaily form input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 48%; /* Ensure label and input fit in one line */
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+/* Button styling */
+#editpopupdaily form button {
+    padding: 12px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 48%; /* Make buttons fit side by side */
+    margin-top: 10px;
+}
+
+/* Cancel button (Red) */
+#editpopupdaily form button[type="button"] {
+    background-color: #f44336;
+}
+
+/* Button hover effects */
+#editpopupdaily form button:hover {
+    background-color: #45a049;
+}
+
+#editpopupdaily form button[type="button"]:hover {
+    background-color: #da190b;
+}
+
+/* Mobile and tablet responsiveness */
+@media (max-width: 600px) {
+    #editpopupdaily {
+        width: 95%; /* Take up more width on mobile */
+    }
+
+    #editpopupdaily form input[type="text"] {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    #editpopupdaily form button {
+        width: 100%; /* Buttons full width on mobile */
+    }
+
+    /* Adjust layout for labels and inputs to be stacked */
+    #editpopupdaily form label,
+    #editpopupdaily form input[type="text"] {
+        width: 100%; /* Ensure labels and inputs take full width */
+    }
+}
+
+
+
+
+/* Edit and Delete Button */
+/* General styling for card actions */
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    gap: 5px;
+}
+
+/* Combined styles for edit buttons */
+.card-actions > .edit-day-btn, 
+.card-actions > .edit-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(45deg, #4CAF50, #2E7D32); /* Green gradient */
+    box-shadow: 0 4px 6px rgba(0, 128, 0, 0.3);
+}
+
+/* Hover effect for edit buttons */
+.card-actions > .edit-day-btn:hover, 
+.card-actions > .edit-btn:hover {
+    background: linear-gradient(45deg, #66BB6A, #43A047); /* Lighter green gradient on hover */
+    box-shadow: 0 6px 8px rgba(0, 128, 0, 0.4);
+    transform: scale(1.05); /* Slight grow effect */
+}
+
+/* Combined styles for delete buttons */
+.card-actions > .delete-day-btn, 
+.card-actions > .delete-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(45deg, #E53935, #B71C1C); /* Red gradient */
+    box-shadow: 0 4px 6px rgba(255, 0, 0, 0.3);
+}
+
+/* Hover effect for delete buttons */
+.card-actions > .delete-day-btn:hover, 
+.card-actions > .delete-btn:hover {
+    background: linear-gradient(45deg, #EF5350, #C62828); /* Lighter red gradient on hover */
+    box-shadow: 0 6px 8px rgba(255, 0, 0, 0.4);
+    transform: scale(1.05); /* Slight grow effect */
+}
+
+/* Style for Pay button */
+.pay-btn ,
+.history-btn ,
+.details-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #007BFF; /* Classic blue */
+    border: 1px solid #007BFF; /* Border to match the background */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+/* Hover effect for Pay button */
+.pay-btn:hover ,
+.history-btn:hover {
+    background-color: #0056b3; /* Darker blue for hover */
+    border-color: #0056b3; /* Darker border on hover */
+    box-shadow: 0 2px 6px rgba(0, 123, 255, 0.3); /* Light shadow on hover */
+}
+
+/* Focus effect for accessibility */
+.pay-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Outline shadow on focus */
+}
+
+/* Style for the table cell with padding */
+td {
+    padding: 8px 12px;
+}
+
+#transaction-history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    }
+  
+  #transaction-history-table th,
+  #transaction-history-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  #transaction-history-table th {
+    background-color: #f4f4f4;
+  }
+
+
+  @media (max-width: 768px) { 
+    .pay-btn,
+    .history-btn,
+    .details-btn {
+        margin-bottom: 10px; /* Adds space between buttons in vertical stacking */
+        margin-right: 0; /* Removes right margin to keep buttons aligned */
+        width: 100%; /* Optional: Makes buttons full width for better touch accessibility */
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .card-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .card-actions > .edit-day-btn, 
+    .card-actions > .edit-btn,
+    .card-actions > .delete-day-btn, 
+    .card-actions > .delete-btn {
+        width: 100%; /* Full-width buttons on smaller screens */
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+
+    td {
+        font-size: 14px; /* Slightly smaller table text on mobile */
+        padding: 8px 10px; /* Adjust padding for mobile screens */
+    }
+}

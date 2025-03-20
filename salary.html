@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Salary Management</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header class="header">
+        <img src="logo.png" alt="Logo" class="logo-img">
+        <h1 class="logo">We Help Solutions</h1>
+        <nav class="nav">
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="employee-salary-container">
+        <h1 class="employee-salary-title">Employee Salary Management</h1>
+        <table class="employee-salary-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Salary Till Date</th>
+                    <th>Balance</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="salary-table-body">
+                <!-- Data will be populated dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <a style="text-align: center;" href="transactionHistory.html">
+    <button style="background-color: rgb(22, 66, 124);" class="history-btn">History</button>
+    </a>
+
+    <footer class="footer">
+        <p>&copy; 2024 We Help Solutions. All Rights Reserved.</p>
+    </footer>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

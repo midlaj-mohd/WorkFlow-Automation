@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other Expenses</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <img src="logo.png" alt="Logo" class="logo-img">
+        <h1 class="logo">We Help Solutions</h1>
+        <nav class="nav">
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="expenses-container">
+        <h1 class="expenses-title">Other Expenses</h1>
+
+        <!-- ✅ Button to Show Form -->
+        <button id="show-expense-form-btn" class="expense-toggle-btn">Add New Expense</button>
+
+        <!-- ✅ Expense Form (Hidden Initially) -->
+        <div class="expenses-form-section hidden" id="other-expense-form-container">
+            <h2 class="expenses-form-title">Add New Expense</h2>
+            <form id="other-expense-form">
+                <label for="expense-date">Date:</label>
+                <input type="date" id="expense-date" class="expense-input" required>
+
+                <label for="expense-material">Material Name:</label>
+                <input type="text" id="expense-material" class="expense-input" required>
+
+                <label for="expense-material-amount">Material Amount (₹):</label>
+                <input type="number" id="expense-material-amount" class="expense-input" required>
+
+                <label for="expense-cargo-fees">Cargo Fees (₹):</label>
+                <input type="number" id="expense-cargo-fees" class="expense-input" required>
+
+                <label for="expense-transport">Transport Cost (₹):</label>
+                <input type="number" id="expense-transport" class="expense-input" required>
+
+                <button type="submit" class="expense-submit-btn">Add Expense</button>
+            </form>
+        </div>
+
+        <!-- ✅ Expense List -->
+        <div class="expenses-list-section">
+            <h2 class="expenses-list-title">Expense Records</h2>
+            <table class="expenses-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Material</th>
+                        <th>Material Amount</th>
+                        <th>Cargo Fees</th>
+                        <th>Transport Cost</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                
+                <tbody id="other-expense-table-body">
+                    <tr>
+                        <td colspan="6">No expenses added yet.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

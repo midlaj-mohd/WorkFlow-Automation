@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | We Help Solutions</title>
+    <link rel="icon" type="image/png" href="./icons/icon-192x192.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <img src="logo.png" alt="Logo" class="logo-img">
+        <h1 class="logo">We Help Solutions</h1>
+        <div id="search-container">
+            <input type="text" id="search-input" placeholder="Search by Date, Work Name, or Place">
+            <button id="search-btn">Search</button>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <section id="search-results" class="card" style="display: none;">
+            <h2>Search Results</h2>
+            <ul id="results-list"></ul>
+        </section>
+        <section id="overview" class="card">
+            <h2>Overview</h2>
+            <p>Work Completed: <span id="work-completed">0</span></p>
+            <p>Work Pending: <span id="work-pending">0</span></p>
+            <p>Cash Paid: <span id="total-cash-paid">₹ 0.00</span></p>
+            <p>Labour Charge: <span id="labour-charge">₹ 0.00</span></p>
+            <p>Food & Transport: <span id="other-expense">₹ 0.00</span></p>
+            <p>Tool Expenses: <span id="tool-expense">₹ 0.00</span></p>
+            <p>Other Expenses: <span id="othr-expense">₹ 0.00</span></p>
+            <p style="font-size: 1.2rem; font-weight: bold;">Net Profit: 
+                <span id="net-profit">₹ 0.00</span>
+            </p>
+        </section>
+
+        <section id="jobs" class="card">
+            <h2>Jobs</h2>
+            <div class="jobs-inner">
+                <a href="workcompleted.html" class="job-card completed">
+                    <div>
+                        <h3>Completed Work</h3>
+                    </div>
+                </a>
+                <a href="pendingwork.html" class="job-card pending">
+                    <div>
+                        <h3>Pending Work</h3>
+                    </div>
+                </a>
+                <div class="job-card add-work">
+                    <div>
+                        <h3>+ Add Work</h3>
+                    </div>
+                </div>
+                <a href="salary.html" class="job-card salary">
+                    <div>
+                        <h3>Salary</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="expenses" class="card">
+            <h2>Tool Expenses</h2>
+            <p>New Tools: <span id="new-tools">₹ 0.00</span></p>
+            <p>Service Cost: <span id="service-tools">₹ 0.00</span></p>
+            <p style="font-weight: bold;">Total: <span id="total-tools">₹ 0.00</span></p>
+        </section>
+        
+        <section id="other-expenses" class="card">
+            <h2>Other Expenses</h2>
+            <p style="font-weight: bold;">Total: <span id="total-expenses">₹ 0.00</span></p>
+        </section>        
+        
+    </main>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2>Add New Work</h2>
+            <form id="add-work-form">
+
+                <label for="work-num">Work Number:</label>
+                <input type="number" id="work-num" name="work-num" required>
+
+                <label for="work-name">Work Name:</label>
+                <input type="text" id="work-name" name="work-name" required>
+
+                <label for="place">Place:</label>
+                <input type="text" id="place" name="place" required>
+
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="estimate">Estimate:</label>
+                <input type="number" id="estimate" name="estimate">
+
+                <label for="details">Details:</label>
+                <textarea id="details" name="details" rows="1"></textarea>
+
+                <button type="submit">Add Work</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 We Help Solutions. All Rights Reserved.</p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
